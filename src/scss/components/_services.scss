@@ -1,0 +1,242 @@
+.services {
+  padding-top: 20px;
+  padding-bottom: 35px;
+
+  @include tablet-portrait {
+    padding-top: 15px;
+  }
+
+  @include mobile {
+    padding-top: 8px;
+    padding-bottom: 44px;
+  }
+}
+
+.serv {
+
+  &__switch {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+    &--active {
+      opacity: 1;
+    }
+  }
+
+  &__title {
+    margin-bottom: 9px;
+
+    @include tablet-portrait {
+      margin-bottom: 4px;
+    }
+
+    @include mobile {
+      margin-bottom: 0;
+    }
+  }
+
+  &-tabs {
+    &__list {
+      @include flex-all-sb;
+      position: relative;
+      margin-bottom: 30px;
+      max-width: 410px;
+
+      @include tablet-portrait {
+        margin-bottom: 32px;
+        max-width: 342px;
+      }
+
+      @include mobile {
+        margin-bottom: 18px;
+      }
+
+      &::after {
+        content: '';
+        @include ghost;
+        top: 92%;
+        width: 100%;
+        height: 4px;
+        background-color: var(--color-silver);
+
+        @include tablet-album {
+          top: 95%;
+        }
+
+        @include mobile {
+          top: 85%;
+        }
+      }
+    }
+
+    &__item {
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+
+    &__btn {
+      position: relative;
+      font-family: "Roboto";
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 28px;
+      color: var(--color-dove);
+      transition: color 0.3s ease-in-out;
+
+      @include mobile {
+        font-size: 14px;
+      }
+
+      &::after {
+        content: '';
+        @include ghost;
+        top: 89%;
+        transform: translateY(4px);
+        z-index: 5;
+        width: 100%;
+        height: 4px;
+        background-color: var(--color-silver);
+        transition: background-color 0.3s ease-in-out;
+
+        @include mobile {
+          top: 82%;
+        }
+      }
+
+      &:focus {
+        background-color: var(--color-romantic);
+      }
+
+      &:hover {
+        color: var(--color-burningOrange);
+      }
+
+      &:active {
+        color: var(--color-burningOrange);
+        background-color: transparent;
+        &::after {
+          background-color: var(--color-burningOrange)
+        }
+      }
+
+      &--active {
+        color: var(--color-burningOrange);
+
+        &:focus {
+          background-color: transparent;
+        }
+
+        &:active {
+          color: var(--color-dove);
+
+          &::after {
+            background-color: var(--color-silver);
+          }
+        }
+
+        &::after {
+          background-color: var(--color-burningOrange);
+        }
+      }
+    }
+  }
+
+  &-card {
+    &__text {
+      line-height: 22px;
+      color: var(--color-dusty);
+
+      @include mobile {
+        line-height: 18px;
+      }
+    }
+  }
+
+  &-main-card {
+
+    &__img {
+      height: 140px;
+
+      @include tablet-album {
+        height: 184px;
+      }
+    }
+
+    &__content {
+      padding-top: 19px;
+      @include tablet-portrait {
+        padding-top: 10px;
+      }
+    }
+
+    &__title {
+      margin-bottom: 5px;
+    }
+
+    &__text {
+      max-height: 44px;
+      overflow: hidden;
+      margin-bottom: 7px;
+      text-overflow: ellipsis;
+
+      @include tablet-album {
+        max-height: 66px;
+      }
+
+      @include tablet-portrait {
+        margin-bottom: 0;
+      }
+
+
+    }
+  }
+}
+
+.works {
+  @include flex-card;
+  justify-content: flex-end;
+  padding-top: 2px;
+
+  @include tablet-album {
+    justify-content: flex-start;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    @include tablet-album {
+      line-height: 39px;
+      margin-bottom: 7px;
+    }
+  }
+}
+
+.serv-ret-card {
+  &__content {
+    @include flex-all-sb;
+    @include flex-col;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  &__img {
+    @include tablet-album {
+      height: 140px;
+    }
+  }
+}
+
+.work-card {
+  &__img {
+    @include desktop {
+      height: 60px;
+    }
+
+    @include tablet-album {
+      height: 71px;
+    }
+
+    @include mobile {
+      height: 94px;
+    }
+  }
+}

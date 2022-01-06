@@ -1,0 +1,122 @@
+@mixin bg-cover {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@mixin bg-contain {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@mixin bg {
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin flex {
+  display: flex;
+}
+
+@mixin flex-v-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-h-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-all-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-all-sb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@mixin flex-col {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@mixin ghost {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+@mixin title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 40px;
+  color: var(--color-ebony);
+
+  @include mobile {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+@mixin subtitle {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 27px;
+  color: var(--color-white);
+
+  @include tablet-portrait {
+    line-height: 23.4px;
+  }
+}
+
+@mixin text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--color-dove);
+}
+
+@mixin link-btn {
+  padding: 20.5px 59px;
+  border-radius: 20px;
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 700;
+  background-color: var(--color-blue);
+
+  @include tablet-album {
+    padding: 20.5px 55.5px;
+  }
+
+  @include tablet-portrait {
+    padding: 20.5px 48px;
+  }
+
+  @include mobile {
+    padding: 20.5px 55.5px;
+  }
+}
+
+@mixin container {
+  @include mobile {
+    margin: 0 auto;
+    padding-left: var(--offset-mobile);
+    padding-right: var(--offset-mobile);
+    max-width: var(--container-width-mobile);
+  }
+}
+

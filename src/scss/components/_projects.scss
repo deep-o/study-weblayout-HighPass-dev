@@ -1,0 +1,270 @@
+.proj {
+  padding-top: 44px;
+  padding-bottom: 25px;
+
+  @include tablet-portrait {
+    padding-top: 39px;
+  }
+
+  @include mobile {
+    padding-top: 32px;
+  }
+
+  &__title {
+    margin-bottom: 15px;
+
+    @include tablet-portrait {
+      margin-bottom: 12px;
+    }
+
+    @include mobile {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__wrap {
+    margin-bottom: 50px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+
+    @include mobile {
+      margin-bottom: 0;
+    }
+
+    &--active {
+      opacity: 1;
+    }
+  }
+
+  &__card {
+    &--lg {
+      @include desktop {
+        height: 100%;
+      }
+
+      @include tablet-album {
+        height: 100%;
+      }
+
+      @include mobile {
+        justify-content: flex-end;
+        height: 422px;
+      }
+
+      & picture {
+        position: absolute;
+        height: 100%;
+
+      }
+    }
+
+    &--sm,
+    &--md {
+      & h3 {
+        display: none;
+      }
+
+      & button {
+        display: none;
+      }
+    }
+  }
+}
+
+.proj-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  & .hash {
+    z-index: 5;
+    padding: 6px 14px;
+
+    @include mobile {
+      top: 5px;
+      right: 5px;
+      padding: 4px 14px;
+    }
+  }
+
+  &__picture {
+    &--sm,
+    &--md {
+      margin-bottom: 18px;
+      height: 184px;
+    }
+  }
+
+  &__content {
+    @include flex-card;
+    position: relative;
+
+    &--lg {
+      padding-top: 46px;
+      padding-bottom: 30px;
+      padding-left: 29px;
+      padding-right: 30px;
+
+      @include desktop {
+        height: 100%;
+      }
+
+      @include tablet-album {
+        height: 100%;
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: 6px;
+    max-width: 293px;
+    color: var(--color-white);
+
+    @include tablet-portrait {
+      line-height: 24px;
+    }
+
+    @include mobile {
+      margin-bottom: 10px;
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+
+  &__text {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 9px;
+    line-height: 22px;
+
+    @include tablet-portrait {
+      max-width: none;
+    }
+
+    @include mobile {
+      font-size: 16px;
+    }
+
+    &--lg {
+      max-width: 293px;
+      color: var(--color-white);
+      @include mobile {
+        margin-bottom: 15px;
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+  }
+
+  &__date {
+    &--lg {
+      position: absolute;
+      top: 21px;
+      color: var(--color-white);
+
+      @include mobile {
+        top: 46%;
+      }
+
+      &::before {
+        background-image: url('../img/calendar-wh.svg');
+      }
+    }
+
+    &--md {
+      transform: translateY(7px);
+    }
+  }
+
+  &__btn {
+    margin-top: auto;
+    transform: translateX(1px);
+
+
+  }
+}
+
+.proj-tabs {
+
+  @include mobile {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &__list {
+    @include flex-all-center;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: var(--offset);
+
+      @include tablet-portrait {
+        margin-right: calc(var(--offset) - 10px);
+      }
+
+      @include mobile {
+        margin-right: calc(var(--offset) - 19px);
+      }
+    }
+  }
+
+  &__btn {
+    width: 30px;
+    height: 30px;
+    color: var(--color-bluewood);
+    background-color: var(--color-silver);
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+    @include mobile {
+      width: 24px;
+      height: 24px;
+    }
+
+    &:focus {
+      background-color: var(--color-romantic);
+    }
+
+    &:hover {
+      @include desktop {
+        background-color: var(--color-mercury);
+        color: var(--color-burningOrange);
+      }
+    }
+
+    &:active {
+      color: var(--color-white);
+      background-color: var(--color-burningOrange);
+    }
+
+    &--active {
+      color: var(--color-white);
+      background-color: var(--color-burningOrange);
+
+      &:focus {
+        background-color: var(--color-burningOrange);
+      }
+
+      &:hover {
+        @include desktop {
+          color: var(--color-white);
+          background-color: var(--color-burningOrange);
+        }
+      }
+
+      &:active {
+        color: var(--color-bluewood);
+        background-color: var(--color-silver);
+      }
+    }
+  }
+}
+
+

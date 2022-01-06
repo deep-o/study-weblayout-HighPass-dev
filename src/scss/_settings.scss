@@ -1,0 +1,146 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "TTFirsNeue", sans-serif;
+  font-weight: 400;
+  background-color: var(--color-white);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:focus {
+  border: none;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+  padding: 0;
+}
+
+.visually-hidden {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	padding:0 !important;
+	border:0 !important;
+	height: 1px !important;
+	width: 1px !important;
+	overflow: hidden;
+}
+
+.is-outer {
+  position: relative !important; // stylelint-disable-line declaration-no-important
+  left: -9999px !important; // stylelint-disable-line declaration-no-important
+}
+
+.site-container {
+  overflow: hidden;
+}
+
+.is-hidden {
+  display: none !important; // stylelint-disable-line declaration-no-important
+}
+
+.for-mobile {
+  display: none;
+
+  @include mobile {
+    display: block;
+  }
+}
+
+.for-tablet {
+  display: none;
+
+  @include tablet-portrait {
+    display: block;
+  }
+}
+
+.error {
+  border: 2px #ff4019 solid !important; // stylelint-disable-line declaration-no-important
+}
+
+.btn-reset {
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
+
+.input-reset {
+  border: none;
+  background-color: transparent;
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
+
+.textarea-reset {
+  resize: none;
+}
+
+.container {
+    margin: 0 auto;
+    padding-left: var(--offset);
+    padding-right: var(--offset);
+    max-width: var(--container-width);
+
+    @include tablet-album{
+      padding-left: var(--offset-tablet-album);
+      padding-right: var(--offset-tablet-album);
+      max-width: var(--container-width-tablet-album);
+    }
+
+    @include tablet-portrait{
+      padding-left: var(--offset-tablet-portrait);
+      padding-right: var(--offset-tablet-portrait);
+      max-width: var(--container-width-tablet-portrait);
+    }
+
+    @include mobile{
+      padding-left: var(--offset-mobile);
+      padding-right: var(--offset-mobile);
+      max-width: var(--container-width-mobile);
+    }
+}
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+.burger {
+  @include burger;
+}

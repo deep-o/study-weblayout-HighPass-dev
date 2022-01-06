@@ -1,0 +1,312 @@
+@import "../mixins";
+
+.header-top {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  background-color: var(--color-mineDark);
+
+  &__container {
+    @include flex-all-sb;
+  }
+
+  &__mobile {
+    & .phone {
+      margin-right: 28px;
+      @include mobile {
+        display: none;
+      }
+    }
+    @include tablet-portrait{
+      @include flex-all-sb;
+    }
+  }
+}
+
+.logo {
+  &__img {
+    width: 190px;
+    height: 30.7px;
+
+    @include tablet-album {
+      width: 166px;
+      height: 27px;
+    }
+
+    @include mobile {
+      width: 112px;
+      height: 18px;
+    }
+  }
+}
+
+.nav {
+  @include flex-v-center;
+  padding-left: 49px;
+  padding-right: 20px;
+
+  @include tablet-album {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+
+  @include tablet-portrait {
+    display: none;
+  }
+
+  &__list {
+    @include flex-v-center;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 69px;
+
+      @include tablet-album {
+        margin-right: 33px;
+      }
+    }
+  }
+
+  &__link {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-family: "TTFirsNeue";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: var(--color-white);
+    transition: color 0.3s ease-in-out;
+
+    @include tablet-album {
+      padding: 0;
+    }
+
+    &:hover {
+      @include desktop {
+        color: var(--color-burningOrange);
+      }
+    }
+
+    &:focus {
+      background-color: var(--color-tuscany);
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    &:active {
+      color: var(--color-grenadier);
+      background-color: transparent;
+    }
+  }
+}
+
+.social {
+  display: flex;
+  justify-content: flex-end;
+
+  &__item {
+    @include flex-all-center;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    @include flex-all-center;
+    width: 100%;
+
+    &:hover > svg {
+      @include desktop {
+        fill: var(--color-burningOrange);
+      }
+    }
+
+    &:focus > svg {
+      fill: var(--color-tuscany);
+    }
+
+    &:active > svg {
+      fill: var(--color-grenadier);
+    }
+  }
+
+  &__svg {
+    width: 30px;
+    height: 30px;
+    fill: var(--color-social);
+    transition: fill 0.3s ease-in-out;
+  }
+}
+
+.header-top__social {
+  @include tablet-portrait {
+    display: none;
+  }
+
+}
+
+.header-bottom {
+  background-color: var(--color-tundora);
+
+  &__container {
+    padding-top: 10px;
+    padding-bottom: 11px;
+    @include flex-all-sb;
+
+    @include tablet-album {
+      padding-top: 13px;
+      padding-bottom: 12px;
+    }
+  }
+}
+
+.header-phone {
+  &__number {
+    @include flex-v-center;
+    padding-left: 7px;
+    padding-right: 5px;
+    font-family: "TTFirsNeue";
+    font-weight: 700;
+    line-height: 21px;
+    color: var(--color-white);
+    transition: color 0.3s ease-in-out;
+    transform: translateX(-8px);
+
+    &:hover,
+    &:hover > svg {
+      @include desktop {
+        color: var(--color-burningOrange);
+        fill: var(--color-burningOrange);
+      }
+    }
+
+    &:focus,
+    &:focus > svg {
+      color: var(--color-white);
+      background-color: var(--color-tuscany);
+      fill: var(--color-white);
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    &:active,
+    &:active > svg {
+      color: var(--color-grenadier);
+      background-color: transparent;
+      fill: var(--color-grenadier);
+    }
+  }
+
+  &__svg {
+    margin-right: 3px;
+    width: 17px;
+    height: 17px;
+    fill: var(--color-white);
+    transition: fill 0.3s ease-in-out;
+  }
+}
+
+.header-phone {
+  @include tablet-portrait {
+    display: none;
+  }
+
+  @include mobile {
+    display: block;
+  }
+}
+
+.header-search {
+  &--bottom {
+    @include tablet-portrait {
+      display: none;
+    }
+  }
+
+  &__form {
+    @include flex-v-center;
+    position: relative;
+
+    &:hover  span{
+      background-color: var(--color-burningOrange);
+    }
+  }
+
+  &__btn {
+    margin-right: 1px;
+    width: 20px;
+    height: 20px;
+
+    @include tablet-portrait {
+      width: 25px;
+      height: 25px;
+    }
+
+    @include mobile {
+      width: 20px;
+      height: 20px;
+    }
+
+    &:focus + input {
+      border-bottom-color: var(--color-burningOrange);
+      outline: none;
+    }
+  }
+
+  &__svg {
+    fill: var(--color-white);
+  }
+
+  &__input {
+    position: relative;
+    width: 172px;
+    font-family: "TTFirsNeue";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    caret-color: var(--color-white);
+    color: var(--color-white);
+
+    @include tablet-album {
+      width: 200px;
+    }
+
+    &::placeholder {
+      color: var(--color-mercury);
+    }
+
+    &:focus ~ span {
+      background-color: var(--color-burningOrange);
+    }
+  }
+
+  &:active input {
+    fill: var(--color-grenadier);
+    // border-bottom: 1px solid var(--color-burningOrange);
+  }
+
+  &__underline {
+    position: absolute;
+    display: inline-block;
+    bottom: 0;
+    right: 0;
+    width: 171px;
+    height: 1px;
+    background-color: white;
+    transition: background-color 0.3s ease-in-out;
+
+    @include tablet-album {
+      width: 200px;
+    }
+  }
+}
+
+.mobile-nav {
+  width: 100%;
+  @include mobile {
+    display: none;
+  }
+  &__list {
+    @include flex-all-sb;
+  }
+}

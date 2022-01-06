@@ -1,0 +1,91 @@
+.aside {
+  padding-top: 7px;
+
+  @include tablet-portrait {
+    padding-top: 0;
+    min-height: 336px;
+  }
+
+  @include mobile {
+    padding-top: 0;
+    min-height: 422px;
+  }
+
+  &__wrap {
+    @include bg-contain;
+    @include flex-all-sb;
+    @include flex-col;
+    position: relative;
+    padding: 30px;
+    padding-top: 20px;
+    height: 100%;
+    background-image: url("../img/aside.jpg");
+
+    @include tablet-album {
+      background-image: url("../img/aside-1024.jpg");
+    }
+
+    @include tablet-portrait {
+      @include bg-cover;
+      background-image: url("../img/aside-768.jpg");
+    }
+
+    @include mobile {
+      background-image: url("../img/aside-320.jpg");
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 37px;
+    color: var(--color-yellow);
+
+    @include mobile {
+      font-size: 30px;
+      line-height: 31px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    color: var(--color-yellow);
+
+    @include mobile {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+
+  &__descr {
+    @include flex-col;
+    display: inline-flex;
+  }
+
+  &__acent {
+    margin-bottom: 9px;
+    padding: 9px;
+    border: 3px solid var(--color-yellow);
+    border-radius: 50%;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-yellow);
+
+    @include tablet-portrait {
+      position: absolute;
+      top: 20px;
+      right: 32px;
+    }
+
+    @include mobile {
+      font-size: 22px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 10px;
+    line-height: 22px;
+    color: var(--color-white);
+  }
+}

@@ -1,0 +1,406 @@
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: var(--gap);
+  grid-row-gap: var(--gap);
+
+  @include mobile {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 422px auto auto;
+  }
+
+  &__item {
+    &--lg {
+      grid-row: 1 / span 2;
+      grid-column: 1 / span 2;
+      @include mobile {
+        grid-row: auto;
+      }
+    }
+
+    &--md {
+      grid-row: 1 / span 1;
+      grid-column: 3 / span 2;
+      @include mobile {
+        grid-column: 1 / span 2;
+        grid-row: auto;
+      }
+    }
+
+    &--sm {
+      @include mobile {
+        grid-row: auto;
+        grid-column: auto;
+      }
+    }
+  }
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: var(--gap);
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    grid-row-gap: 21px;
+  }
+}
+
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: var(--gap);
+
+  @include tablet-album {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-row-gap: calc(var(--gap) - 2px);
+  }
+
+  @include tablet-portrait {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-row-gap: var(--gap);
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-row-gap: 26px;
+  }
+
+  &__item {
+    &--lg {
+      grid-column: span 6;
+      @include tablet-album {
+        grid-column: span 5;
+      }
+      @include tablet-portrait {
+        grid-column: span 6;
+      }
+
+      @include mobile {
+        grid-column: auto;
+      }
+    }
+
+    &--md {
+      grid-column: span 3;
+
+      @include mobile {
+        grid-column: auto
+      }
+    }
+
+    &--sm {
+      grid-column: span 2;
+
+      @include mobile {
+        grid-column: auto;
+      }
+    }
+  }
+
+  &__1 {
+    &--sm {
+      order: -1;
+    }
+
+    &--lg:not(:first-child) {
+      @include tablet-album {
+        order: 1;
+      }
+    }
+  }
+
+  &__2 {
+    &--lg:not(:first-child) {
+      @include desktop {
+        order: 1;
+      }
+
+      @include tablet-album {
+        order: 1;
+      }
+    }
+
+    &--sm {
+      @include tablet-album {
+        order: 1;
+      }
+
+      @include mobile {
+        order: -1;
+      }
+    }
+  }
+}
+
+.serv-grid {
+  display: grid;
+  grid-template-columns: auto 410px;
+  grid-template-rows: 497px auto;
+  grid-column-gap: var(--gap);
+  grid-row-gap: var(--gap);
+
+  @include tablet-album {
+    grid-template-columns: auto 342px;
+    grid-template-rows: 490px auto;
+  }
+
+  @include tablet-portrait {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    grid-row-gap: 15px;
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-row-gap: 12px;
+  }
+
+  &__main {
+    grid-row: 1 / 3;
+    grid-column: 1 / 2;
+    @include tablet-portrait {
+      grid-row: auto;
+      grid-column: span 6;
+    }
+    @include mobile {
+      grid-column: auto;
+    }
+  }
+
+  &__item {
+    @include tablet-portrait {
+      grid-row: auto;
+      grid-column: span 6;
+    }
+
+    @include mobile {
+      grid-column: auto;
+    }
+  }
+}
+
+.serv-main {
+  &-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 21px;
+
+    @include tablet-album {
+      grid-row-gap: 16px;
+    }
+
+    @include tablet-portrait {
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: var(--gap);
+      grid-row-gap: 12px;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      grid-column-gap: var(--gap);
+    }
+  }
+
+  &-card-grid {
+    display: grid;
+    grid-template-columns: 300px auto;
+    grid-column-gap: calc(var(--gap) - 2px);
+    @include tablet-album {
+      grid-template-columns: 218px auto;
+    }
+
+    @include tablet-portrait {
+      grid-template-columns: 1fr;
+    }
+    }
+  }
+
+.serv-work-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: var(--gap);
+  grid-row-gap: calc(var(--gap) - 3px);
+
+  @include tablet-album {
+    grid-row-gap: 17px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include tablet-portrait {
+    grid-template-columns: repeat(6, 1fr);
+    grid-row-gap: 25px;
+  }
+
+  @include mobile {
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 26px;
+  }
+
+}
+
+.serv-ret {
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: var(--gap);
+    grid-row-gap: calc(var(--gap) - 10px);
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    grid-column-gap: 28px;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.classes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: var(--gap);
+
+  @include tablet-album {
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 40px;
+  }
+
+  @include tablet-portrait {
+    grid-row-gap: 15px;
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    grid-template-rows: 268px auto auto;
+  }
+
+  &__list {
+    @include tablet-album {
+      grid-column: 1 / span 2;
+    }
+  }
+}
+
+.classes-list {
+  &-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 24px;
+
+    @include tablet-album {
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: var(--gap);
+      grid-row-gap: 13px;
+    }
+
+    @include tablet-portrait {
+      grid-row-gap: 4px;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      grid-row-gap: 26px;
+    }
+  }
+
+  &-card-grid {
+    display: grid;
+    grid-template-columns: 80px auto;
+    grid-column-gap: calc(var(--gap)/2);
+
+    @include tablet-album {
+      grid-template-columns: 94px auto;
+      grid-column-gap: var(--gap);
+    }
+
+    @include tablet-portrait {
+      grid-row-gap: 30px;
+    }
+
+  }
+}
+
+.contacts-grid {
+  display: grid;
+  grid-template-columns: auto 410px;
+  grid-column-gap: var(--gap);
+
+  @include tablet-album {
+    grid-template-columns: auto 342px;
+    grid-column-gap: var(--gap);
+  }
+
+  @include tablet-portrait {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 460px auto;
+    grid-row-gap: var(--gap);
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    grid-template-rows: 472px auto;
+    grid-row-gap: 25px;
+
+  }
+
+  &__map {
+    @include tablet-portrait {
+      grid-column: span 6;
+    }
+
+    @include mobile {
+      grid-column: auto;
+    }
+  }
+
+  &__form {
+    @include tablet-portrait {
+      grid-column: span 4;
+
+      @include mobile {
+        grid-column: auto;
+      }
+    }
+  }
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-column-gap: var(--gap);
+
+  @include tablet-album {
+    grid-template-columns: 263px auto 161px;
+  }
+
+  @include tablet-portrait {
+    grid-template-columns: 263px auto;
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    grid-row-gap: 46px;
+  }
+
+  &__social {
+    @include mobile {
+      order: -1;
+    }
+  }
+}
+
+

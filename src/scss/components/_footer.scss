@@ -1,0 +1,83 @@
+.footer {
+  background-color: var(--color-mineDark);
+  &__container {
+    padding-top: 27px;
+    padding-bottom: 19px;
+    color: var(--color-social);
+
+    @include mobile {
+      padding-top: 33px;
+    }
+  }
+
+  &-quote {
+    padding-left: 51px;
+
+    @include tablet-album {
+      padding-left: 59px;
+    }
+
+    &__text {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    @include tablet-portrait {
+      display: none;
+    }
+  }
+
+  &-social {
+    @include flex;
+    @include flex-col;
+    align-items: flex-end;
+
+    @include mobile {
+      align-items: center;
+    }
+
+    &__text {
+      margin-bottom: 10px;
+      line-height: 17px;
+
+      @include mobile {
+        margin-bottom: 7px;
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+
+    &__list {
+      padding-right: 14px;
+
+      @include mobile {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+.copyright {
+  @include mobile {
+    @include flex-col;
+    @include flex-all-center;
+  }
+
+  &__img {
+    margin-bottom: 3px;
+  }
+
+  &__text {
+    font-family: "TTFirsNeue";
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--color-mercury);
+
+    @include mobile {
+      font-size: 10px;
+      line-height: 13px;
+    }
+  }
+}
+
+

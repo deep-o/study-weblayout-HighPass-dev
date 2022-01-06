@@ -1,0 +1,155 @@
+.hero {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+
+  &__card {
+    &--lg {
+      @include bg-cover;
+      background-image: url('../img/hero-main.jpg');
+      padding: 60px;
+
+      @include tablet-album {
+        padding: 30px;
+      }
+
+      @include tablet-portrait {
+        background-image: url('../img/hero-main-768.jpg');
+      }
+
+      @include mobile {
+        background-image: url('../img/hero-main-320.jpg');
+      }
+    }
+
+    &--md {
+      @include mobile {
+        padding-top: 10px;
+      }
+
+      & picture {
+        @include desktop {
+          height: 300px;
+        }
+
+        @include tablet-album {
+          height: 332px;
+        }
+
+        @include tablet-portrait {
+          height: 228px;
+        }
+
+        @include mobile {
+          height: 186px;
+        }
+
+      }
+    }
+
+    &--sm {
+      @include desktop {
+        height: 257px;
+      }
+
+      @include tablet-album {
+        height: 186px;
+      }
+
+      @include tablet-portrait {
+        height: 133px;
+      }
+
+      @include mobile {
+        height: 105px;
+      }
+    }
+  }
+
+  &-card {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    &__text {
+      margin-bottom: 3px;
+      font-family: "Roboto";
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 19px;
+      color: var(--color-white);
+
+      @include tablet-album {
+        margin-bottom: 8px;
+      }
+
+      @include tablet-portrait {
+        margin-bottom: 15px;
+      }
+
+      @include mobile {
+        margin-bottom: 7px;
+        font-size: 14px;
+      }
+    }
+
+    &__title {
+      margin-bottom: 19px;
+      font-size: 36px;
+      line-height: 37px;
+      color: var(--color-white);
+
+      @include tablet-album {
+        font-size: 34px;
+        line-height: 34px;
+      }
+
+      @include tablet-portrait {
+        margin-bottom: 25px;
+        line-height: 30px;
+      }
+
+      @include mobile {
+        margin-bottom: 14px;
+        font-size: 24px;
+        line-height: 26px;
+      }
+    }
+
+    &__pic {
+      height: 100%;
+    }
+
+    &__img {
+      height: 100%;
+    }
+  }
+
+  &__hash {
+    top: 15px;
+    right: 16px;
+    @include mobile {
+      top: 6px;
+      right: 6px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 19px;
+    transform: translateY(-6px);
+
+    @include tablet-portrait {
+      margin-bottom: 13px;
+      font-size: 22px;
+      line-height: 24px;
+    }
+
+    @include mobile {
+      margin-bottom: 10px;
+      font-size: 18px;
+      line-height: 19px;
+    }
+  }
+}

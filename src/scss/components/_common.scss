@@ -1,0 +1,340 @@
+.phone {
+  &__number {
+    @include flex-v-center;
+    padding-left: 7px;
+    padding-right: 5px;
+    font-family: "TTFirsNeue";
+    font-weight: 700;
+    line-height: 21px;
+    color: var(--color-white);
+    transition: color 0.3s ease-in-out;
+    transform: translateX(-8px);
+
+    @include mobile {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 18px;
+      transform: translateX(3px);
+    }
+
+    &:hover,
+    &:hover > svg {
+      @include desktop {
+        color: var(--color-burningOrange);
+        fill: var(--color-burningOrange);
+      }
+    }
+
+    &:focus,
+    &:focus > svg {
+      color: var(--color-white);
+      background-color: var(--color-tuscany);
+      fill: var(--color-white);
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    &:active,
+    &:active > svg {
+      color: var(--color-grenadier);
+      background-color: transparent;
+      fill: var(--color-grenadier);
+    }
+  }
+
+  &__svg {
+    margin-right: 3px;
+    width: 17px;
+    height: 17px;
+    fill: var(--color-white);
+    transition: fill 0.3s ease-in-out;
+
+    @include mobile {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+
+.input {
+  &::placeholder {
+    transition: color 0.3s ease-in-out;
+  }
+
+  &:focus {
+    border: 1px solid var(--color-burningOrange);
+  }
+
+  &:hover {
+    @include desktop {
+      &::placeholder {
+        color: var(--color-burningOrange);
+      }
+    }
+  }
+}
+
+.js-validate-error-label {
+  font-size: 9px;
+}
+
+.hash {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  padding: 7px 14px;
+  background-color: var(--color-mine);
+
+  @include mobile {
+    padding: 4px 7px;
+  }
+
+  &__text {
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.41px;
+    color: var(--color-white);
+
+    @include mobile {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+}
+
+.orange-btn {
+  padding: 12px 19px;
+  border: 3px solid transparent;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  color: var(--color-white);
+  background-color: var(--color-burningOrange);
+  transition: background-color 0.3s ease-in-out;
+
+  @include mobile {
+    padding: 9px 19px;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  &:focus {
+    border: 3px solid var(--color-grenadier);
+  }
+
+  &:hover {
+    @include desktop {
+      background-color: var(--color-tuscany);
+    }
+  }
+
+  &:active {
+    background-color: var(--color-grenadier);
+  }
+}
+
+.trnsp-btn {
+  padding: 12px 20px;
+  border: 3px solid var(--color-burningOrange);
+  outline: none;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  color: var(--color-white);
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out;
+
+  @include mobile {
+    padding: 9px 19px;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  &:focus {
+    border: 3px solid var(--color-burningOrange);
+    outline: none;
+    background-color: var(--color-tuscany);
+  }
+
+  &:hover {
+    @include desktop {
+      background-color: var(--color-burningOrange);
+    }
+  }
+
+  &:active {
+    border-color: var(--color-grenadier);
+    background-color: var(--color-grenadier);
+  }
+}
+
+.title {
+  font-family: "TTFirsNeue";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+
+  @include tablet-portrait {
+    font-size: 24px;
+    line-height: 31px;
+  }
+
+  @include mobile {
+    font-size: 18px;
+    line-height: 23px;
+  }
+}
+
+.subtitle {
+  width: 100%;
+  font-family: "TTFirsNeue";
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 22px;
+  color: var(--color-mineDark);
+  overflow-wrap: break-word;
+  transition: color 0.3s ease-in-out;
+
+  @include mobile {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  &:focus {
+    background-color: var(--color-romantic);
+  }
+
+  &:hover {
+    color: var(--color-burningOrange);
+  }
+
+  &:active {
+    color: var(--color-grenadier);
+    background-color: transparent;
+  }
+}
+
+.text {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+
+  @include mobile {
+    font-size: 14px;
+    line-height: 25px;
+  }
+}
+
+.date,
+.time {
+  position: relative;
+  padding-left: 17px;
+  margin-top: auto;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 22px;
+  color: var(--color-dusty);
+
+  &::before {
+    @include ghost;
+    top: 50%;
+    transform: translateY(-50%);
+    content: '';
+    width: 14px;
+    height: 14px;
+    background-repeat: no-repeat;
+  }
+}
+
+.date {
+  &::before {
+    background-image: url('../img/calendar.svg');
+  }
+}
+
+.time {
+  &::before {
+    background-image: url('../img/clock.svg');
+  }
+}
+
+.more-link {
+  position: relative;
+  display: inline-block;
+  transform: translateX(-4px);
+  padding: 5px;
+  font-family: "Roboto";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 28px;
+  color: var(--color-burningOrange);
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+  @include mobile {
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  &__arrow {
+    position: relative;
+    transform: translateY(-4px);
+    display: inline-block;
+    width: 19px;
+    height: 2px;
+    background-color: var(--color-burningOrange);
+    transition: background-color 0.3s ease-in-out, width 0.3s ease-in-out;
+
+    @include mobile {
+      width: 15px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -4px;
+      right: 0;
+      width: 10px;
+      height: 10px;
+      border-top: 2px solid var(--color-burningOrange);
+      border-right: 2px solid var(--color-burningOrange);
+      transform: rotate(45deg);
+      transition: border-color 0.3s ease-in-out;
+    }
+  }
+
+  &:focus {
+    background-color: var(--color-romantic);
+  }
+
+  &:active {
+    color: var(--color-grenadier);
+    background-color: transparent;
+  }
+
+  &:focus &__arrow {
+    width: 27px;
+  }
+
+  @include desktop {
+    &:hover &__arrow {
+      width: 27px;
+    }
+  }
+
+  &:active &__arrow {
+    width: 19px;
+    background-color: var(--color-grenadier);
+    &::after {
+      border-top-color: var(--color-grenadier);
+      border-right-color: var(--color-grenadier);
+    }
+  }
+
+}
+
+
+
